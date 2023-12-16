@@ -1,40 +1,40 @@
 CREATE DATABASE IF NOT EXISTS Archive;
 
 CREATE TABLE IF NOT EXISTS Archive.sayings (
-    id INTEGER AUTO_INCREMENT,
-    speaker_id INT,
-    interview_id INT,
-    saying_text VARCHAR(1000), 
-    saying_number INT,
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    speaker_id INT NOT NULL,
+    interview_id INT NOT NULL,
+    saying_text TEXT NOT NULL, 
+    saying_number INT NOT NULL,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS Archive.Interviews (
-    interview_id INTEGER,
-    identificator TEXT,
-    informant_id TEXT, 
-    interviewer_id TEXT,
-    place TEXT,
-    day INT,
-    month INT,
-    year INT,
+    interview_id INTEGER NOT NULL,
+    identificator TEXT NOT NULL,
+    informant_id INTEGER NOT NULL, 
+    interviewer_id INTEGER NOT NULL,
+    place TEXT NOT NULL,
+    day INTEGER NOT NULL,
+    month INTEGER NOT NULL,
+    year INTEGER NOT NULL,
     PRIMARY KEY (interview_id)
 );
 
 CREATE TABLE IF NOT EXISTS Archive.Speakers (
-    speaker_id INTEGER AUTO_INCREMENT, 
-    speaker_role TEXT,
-    gender TEXT,
-    birth_year INT,
+    speaker_id INTEGER AUTO_INCREMENT NOT NULL, 
+    speaker_role TEXT NOT NULL,
+    gender TEXT NOT NULL,
+    birth_year INT NOT NULL,
     age INT,
     PRIMARY KEY (speaker_id)
 );
 
 CREATE TABLE IF NOT EXISTS Archive.Speakers_info (
-    speaker_id INTEGER, 
-    speaker_role TEXT,
-    real_name TEXT,
-    real_surname TEXT,
+    speaker_id INTEGER NOT NULL, 
+    speaker_role TEXT NOT NULL,
+    real_name TEXT NOT NULL,
+    real_surname TEXT NOT NULL,
     comment TEXT,
     email TEXT,  
     phone_number TEXT,
